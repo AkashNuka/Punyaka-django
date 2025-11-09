@@ -133,30 +133,12 @@ REST_FRAMEWORK = {
 # CORS Settings
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_HEADERS = ['*']
-CORS_ALLOW_METHODS = ['*']
 
-# CSRF Settings - Permissive for development/demo
-# In production, replace with specific domains
+# CSRF Settings
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
 ]
-
-# Get Codespace name from environment if available
-import os
-CODESPACE_NAME = os.getenv('CODESPACE_NAME', '')
-if CODESPACE_NAME:
-    # Add Codespace URLs dynamically
-    CSRF_TRUSTED_ORIGINS.extend([
-        f'https://{CODESPACE_NAME}-3000.preview.app.github.dev',
-        f'https://{CODESPACE_NAME}-8000.preview.app.github.dev',
-    ])
-
-CSRF_COOKIE_SAMESITE = 'Lax'
-CSRF_COOKIE_SECURE = False  # Set to True in production with HTTPS
-SESSION_COOKIE_SAMESITE = 'Lax'
-SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
 
 # Swagger Settings
 SWAGGER_SETTINGS = {
