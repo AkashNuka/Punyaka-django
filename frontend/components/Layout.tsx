@@ -31,6 +31,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/products" className="hover:text-orange-200">
                 Shop
               </Link>
+              {user && (
+                <Link href="/cart" className="hover:text-orange-200">
+                  🛒 Cart
+                </Link>
+              )}
               
               {user ? (
                 <>

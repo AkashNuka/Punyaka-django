@@ -146,11 +146,11 @@ export const cartAPI = {
   addItem: (data: any) =>
     api.post('/cart/add_item/', data),
   
-  updateItem: (data: any) =>
-    api.post('/cart/update_item/', data),
+  updateItem: (itemId: number, data: any) =>
+    api.patch(`/cart/items/${itemId}/`, data),
   
-  removeItem: (data: any) =>
-    api.post('/cart/remove_item/', data),
+  removeItem: (itemId: number) =>
+    api.delete(`/cart/items/${itemId}/`),
   
   clear: () =>
     api.post('/cart/clear/'),
@@ -159,6 +159,9 @@ export const cartAPI = {
 export const ordersAPI = {
   getAll: () =>
     api.get('/orders/'),
+  
+  create: (data: any) =>
+    api.post('/orders/', data),
   
   checkout: (data: any) =>
     api.post('/orders/checkout/', data),
