@@ -170,4 +170,10 @@ export const ordersAPI = {
     api.get(`/orders/${id}/`),
 };
 
+// Helper function to get admin URL
+export const getAdminUrl = () => {
+  const apiUrl = getApiBaseUrl();
+  return apiUrl.replace('/api', '/admin');
+};
+
 export default api;

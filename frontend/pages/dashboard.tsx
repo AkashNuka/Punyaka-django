@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Layout from '../components/Layout'
 import { useAuth } from '../context/AuthContext'
-import { bookingsAPI, ordersAPI } from '../services/api'
+import { bookingsAPI, ordersAPI, getAdminUrl } from '../services/api'
 import Link from 'next/link'
 
 export default function Dashboard() {
@@ -123,8 +123,10 @@ export default function Dashboard() {
           <div className="mt-8 bg-blue-100 p-6 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Admin Access</h2>
             <p className="mb-4">Access the Django admin panel for full control:</p>
+            <p className="mb-2 text-sm"><strong>Username:</strong> admin@punyaka.com</p>
+            <p className="mb-4 text-sm"><strong>Password:</strong> admin123</p>
             <a
-              href="http://localhost:8000/admin"
+              href={getAdminUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600"
