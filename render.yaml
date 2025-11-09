@@ -2,7 +2,7 @@ services:
   - type: web
     name: punyaka-backend
     env: python
-    region: singapore
+    region: oregon
     plan: free
     rootDir: backend
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate"
@@ -26,7 +26,7 @@ services:
   - type: web
     name: punyaka-frontend
     env: node
-    region: singapore
+    region: oregon
     plan: free
     rootDir: frontend
     buildCommand: "npm install && npm run build"
