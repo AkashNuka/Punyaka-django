@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view, permission_classes, action
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.contrib.auth import login, logout
+from django.middleware.csrf import get_token
 from .models import User, PriestProfile
 from .serializers import (
     UserSerializer, RegisterSerializer, LoginSerializer, PriestProfileSerializer
@@ -17,10 +18,13 @@ def register_view(request):
     if serializer.is_valid():
         user = serializer.save()
         login(request, user)
-        return Response({
+        # Ensure CSRF token is set
+        get_token(request)
+        response = Response({
             'user': UserSerializer(user).data,
             'message': 'Registration successful'
         }, status=status.HTTP_201_CREATED)
+        return response
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -32,10 +36,13 @@ def login_view(request):
     if serializer.is_valid():
         user = serializer.validated_data['user']
         login(request, user)
-        return Response({
+        # Ensure CSRF token is set
+        get_token(request)
+        response = Response({
             'user': UserSerializer(user).data,
             'message': 'Login successful'
         })
+        return response
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -53,6 +60,13 @@ def current_user_view(request):
     """Get current logged-in user"""
     serializer = UserSerializer(request.user)
     return Response(serializer.data)
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def csrf_token_view(request):
+    """Get CSRF token"""
+    return Response({'csrfToken': get_token(request)})
 
 
 class PriestProfileViewSet(viewsets.ReadOnlyModelViewSet):

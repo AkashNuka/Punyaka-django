@@ -49,12 +49,25 @@ if (typeof window !== 'undefined') {
 }
 
 // Add CSRF token to requests
-api.interceptors.request.use((config: any) => {
+api.interceptors.request.use(async (config: any) => {
   // Get CSRF token from cookie
-  const csrfToken = document.cookie
+  let csrfToken = document.cookie
     .split('; ')
     .find(row => row.startsWith('csrftoken='))
     ?.split('=')[1];
+  
+  // If no CSRF token in cookie, fetch it from the server
+  if (!csrfToken && config.url !== '/auth/csrf/') {
+    try {
+      const response = await fetch(`${getApiBaseUrl()}/auth/csrf/`, {
+        credentials: 'include',
+      });
+      const data = await response.json();
+      csrfToken = data.csrfToken;
+    } catch (error) {
+      console.error('Failed to fetch CSRF token:', error);
+    }
+  }
   
   if (csrfToken) {
     config.headers['X-CSRFToken'] = csrfToken;

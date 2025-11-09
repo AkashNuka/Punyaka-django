@@ -152,7 +152,20 @@ CSRF_TRUSTED_ORIGINS = [
     'https://*.github.dev',
     'https://*.githubpreview.dev',
     'https://*.app.github.dev',
+    'https://punyaka-frontend.onrender.com',
+    'https://punyaka-backend.onrender.com',
 ]
+
+# Session cookie settings for cross-origin
+SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = True  # Required for SameSite=None
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_DOMAIN = None  # Let Django handle it
+
+# CSRF cookie settings for cross-origin
+CSRF_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SECURE = True  # Required for SameSite=None
+CSRF_COOKIE_HTTPONLY = False  # Allow JavaScript to read it
 
 # Swagger Settings
 SWAGGER_SETTINGS = {
