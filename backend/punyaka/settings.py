@@ -69,16 +69,27 @@ TEMPLATES = [
 WSGI_APPLICATION = 'punyaka.wsgi.application'
 
 # Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB', 'punyaka_db'),
-        'USER': os.environ.get('POSTGRES_USER', 'punyaka_user'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'punyaka_pass'),
-        'HOST': os.environ.get('POSTGRES_HOST', 'db'),
-        'PORT': os.environ.get('POSTGRES_PORT', '5432'),
+# Use DATABASE_URL if available (Render), otherwise use individual env vars (Docker)
+DATABASE_URL = os.environ.get('DATABASE_URL')
+
+if DATABASE_URL:
+    # Parse DATABASE_URL for Render deployment
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
     }
-}
+else:
+    # Use Docker Compose environment variables
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('POSTGRES_DB', 'punyaka_db'),
+            'USER': os.environ.get('POSTGRES_USER', 'punyaka_user'),
+            'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'punyaka_pass'),
+            'HOST': os.environ.get('POSTGRES_HOST', 'db'),
+            'PORT': os.environ.get('POSTGRES_PORT', '5432'),
+        }
+    }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
