@@ -8,6 +8,7 @@ from django.conf.urls.static import static
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from core.views.demo_init import initialize_demo_data
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -25,6 +26,9 @@ urlpatterns = [
     path('api/', include('core.urls')),
     path('api/', include('bookings.urls')),
     path('api/', include('ecommerce.urls')),
+    
+    # Demo data initialization endpoint
+    path('api/init-demo-data/', initialize_demo_data, name='init-demo-data'),
     
     # API Documentation
     path('api/swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
