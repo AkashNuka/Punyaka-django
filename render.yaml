@@ -4,6 +4,7 @@ services:
     env: python
     region: singapore
     plan: free
+    rootDir: backend
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate"
     startCommand: "gunicorn punyaka.wsgi:application"
     envVars:
@@ -27,6 +28,7 @@ services:
     env: node
     region: singapore
     plan: free
+    rootDir: frontend
     buildCommand: "npm install && npm run build"
     startCommand: "npm start"
     envVars:
