@@ -5,6 +5,7 @@ from ..views_main import (
     login_view, 
     logout_view, 
     current_user_view,
+    csrf_token_view,
     PriestProfileViewSet
 )
 
@@ -13,5 +14,6 @@ __all__ = [
     'login_view',
     'logout_view',
     'current_user_view',
+    'csrf_token_view',
     'PriestProfileViewSet',
 ]
