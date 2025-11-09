@@ -5,7 +5,7 @@ services:
     region: oregon
     plan: free
     rootDir: backend
-    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate && python init_demo_data.py"
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate && chmod +x setup_demo_data.sh && ./setup_demo_data.sh"
     startCommand: "gunicorn punyaka.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
