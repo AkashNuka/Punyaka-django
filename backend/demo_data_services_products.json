@@ -1,0 +1,253 @@
+[
+  {
+    "model": "bookings.service",
+    "pk": 1,
+    "fields": {
+      "name": "Graha Shanti Pooja",
+      "description": "Complete planetary peace ritual for removing negative influences of planets. Includes homa, mantra chanting, and offerings to all nine planets.",
+      "service_type": "pooja",
+      "base_price": "5100.00",
+      "duration_minutes": 180,
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 2,
+    "fields": {
+      "name": "Ganesh Chaturthi Pooja",
+      "description": "Traditional Ganesh Chaturthi celebration with full rituals, modak offering, and aarti.",
+      "service_type": "pooja",
+      "base_price": "2500.00",
+      "duration_minutes": 120,
+      "is_active": true,
+      "created_at": "2024-01-05T00:00:00Z",
+      "updated_at": "2024-01-05T00:00:00Z"
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 3,
+    "fields": {
+      "name": "Satyanarayan Katha",
+      "description": "Complete Satyanarayan puja with katha recitation, prasad preparation, and family blessings.",
+      "service_type": "pooja",
+      "base_price": "3100.00",
+      "duration_minutes": 120,
+      "is_active": true,
+      "created_at": "2024-01-10T00:00:00Z",
+      "updated_at": "2024-01-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 4,
+    "fields": {
+      "name": "House Warming Ceremony (Griha Pravesh)",
+      "description": "Complete house warming rituals for new home entry. Includes Vastu pooja, Ganesh pooja, and homa.",
+      "service_type": "homa",
+      "base_price": "7500.00",
+      "duration_minutes": 240,
+      "is_active": true,
+      "created_at": "2024-01-12T00:00:00Z",
+      "updated_at": "2024-01-12T00:00:00Z"
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 5,
+    "fields": {
+      "name": "Rudrabhishek",
+      "description": "Complete Shiva abhishekam with Rudra mantras, panchamrit, and sacred offerings.",
+      "service_type": "pooja",
+      "base_price": "4200.00",
+      "duration_minutes": 120,
+      "is_active": true,
+      "created_at": "2024-01-15T00:00:00Z",
+      "updated_at": "2024-01-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 6,
+    "fields": {
+      "name": "Lakshmi Pooja",
+      "description": "Goddess Lakshmi worship for prosperity and wealth. Perfect for Diwali or new business ventures.",
+      "service_type": "pooja",
+      "base_price": "2800.00",
+      "duration_minutes": 120,
+      "is_active": true,
+      "created_at": "2024-01-18T00:00:00Z",
+      "updated_at": "2024-01-18T00:00:00Z"
+    }
+  },
+  {
+    "model": "ecommerce.category",
+    "pk": 1,
+    "fields": {
+      "name": "Pooja Items",
+      "description": "Essential items for daily worship and rituals",
+      "slug": "pooja-items"
+    }
+  },
+  {
+    "model": "ecommerce.category",
+    "pk": 2,
+    "fields": {
+      "name": "Spiritual Books",
+      "description": "Sacred texts and spiritual literature",
+      "slug": "spiritual-books"
+    }
+  },
+  {
+    "model": "ecommerce.category",
+    "pk": 3,
+    "fields": {
+      "name": "Idols & Yantras",
+      "description": "Divine idols and sacred geometric diagrams",
+      "slug": "idols-yantras"
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 1,
+    "fields": {
+      "name": "Brass Diya Set (6 pieces)",
+      "description": "Handcrafted brass diyas perfect for daily pooja and festivals. Each diya is 3 inches in diameter.",
+      "category": 1,
+      "price": "850.00",
+      "stock_quantity": 50,
+      "image_url": "https://example.com/brass-diya.jpg",
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 2,
+    "fields": {
+      "name": "Bhagavad Gita (Sanskrit-English)",
+      "description": "Complete Bhagavad Gita with Sanskrit shlokas and English translation. Hardcover edition with commentary.",
+      "category": 2,
+      "price": "450.00",
+      "stock_quantity": 100,
+      "image_url": "https://example.com/bhagavad-gita.jpg",
+      "is_active": true,
+      "created_at": "2024-01-02T00:00:00Z"
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 3,
+    "fields": {
+      "name": "Ganesh Brass Idol (8 inches)",
+      "description": "Beautiful brass Ganesh idol with fine detailing. Perfect for home temple or office.",
+      "category": 3,
+      "price": "2500.00",
+      "stock_quantity": 25,
+      "image_url": "https://example.com/ganesh-idol.jpg",
+      "is_active": true,
+      "created_at": "2024-01-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 4,
+    "fields": {
+      "name": "Incense Sticks Combo Pack",
+      "description": "Premium agarbatti combo with 5 fragrances - Sandalwood, Rose, Jasmine, Mogra, Lavender. 100 sticks per box.",
+      "category": 1,
+      "price": "350.00",
+      "stock_quantity": 200,
+      "image_url": "https://example.com/incense.jpg",
+      "is_active": true,
+      "created_at": "2024-01-04T00:00:00Z"
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 5,
+    "fields": {
+      "name": "Sri Yantra (Brass)",
+      "description": "Authentic Sri Yantra made of brass. 6 inch diameter sacred geometric design for prosperity.",
+      "category": 3,
+      "price": "1800.00",
+      "stock_quantity": 30,
+      "image_url": "https://example.com/sri-yantra.jpg",
+      "is_active": true,
+      "created_at": "2024-01-05T00:00:00Z"
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 6,
+    "fields": {
+      "name": "Rudraksha Mala (108 beads)",
+      "description": "Genuine 5 Mukhi Rudraksha mala with 108+1 beads. Perfect for meditation and japa.",
+      "category": 1,
+      "price": "1500.00",
+      "stock_quantity": 75,
+      "image_url": "https://example.com/rudraksha.jpg",
+      "is_active": true,
+      "created_at": "2024-01-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 7,
+    "fields": {
+      "name": "Hanuman Chalisa Book",
+      "description": "Pocket-sized Hanuman Chalisa with Hindi and English transliteration. Includes meaning and benefits.",
+      "category": 2,
+      "price": "150.00",
+      "stock_quantity": 150,
+      "image_url": "https://example.com/hanuman-chalisa.jpg",
+      "is_active": true,
+      "created_at": "2024-01-07T00:00:00Z"
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 8,
+    "fields": {
+      "name": "Pooja Thali Set (Brass)",
+      "description": "Complete brass pooja thali set with 7 items - plate, diya, bell, incense holder, kumkum box, water pot.",
+      "category": 1,
+      "price": "2200.00",
+      "stock_quantity": 40,
+      "image_url": "https://example.com/pooja-thali.jpg",
+      "is_active": true,
+      "created_at": "2024-01-08T00:00:00Z"
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 9,
+    "fields": {
+      "name": "Lakshmi-Ganesh Idol Pair",
+      "description": "Beautiful brass idol pair of Goddess Lakshmi and Lord Ganesh. 6 inches height each.",
+      "category": 3,
+      "price": "3500.00",
+      "stock_quantity": 20,
+      "image_url": "https://example.com/lakshmi-ganesh.jpg",
+      "is_active": true,
+      "created_at": "2024-01-09T00:00:00Z"
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 10,
+    "fields": {
+      "name": "Camphor Tablets (Pure)",
+      "description": "100% pure camphor tablets for aarti and spiritual purposes. Pack of 50 tablets.",
+      "category": 1,
+      "price": "180.00",
+      "stock_quantity": 300,
+      "image_url": "https://example.com/camphor.jpg",
+      "is_active": true,
+      "created_at": "2024-01-10T00:00:00Z"
+    }
+  }
+]

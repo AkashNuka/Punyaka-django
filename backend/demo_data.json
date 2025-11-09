@@ -1,0 +1,487 @@
+[
+  {
+    "model": "core.user",
+    "pk": 1,
+    "fields": {
+      "username": "admin",
+      "password": "pbkdf2_sha256$600000$salt$hash",
+      "email": "admin@punyaka.com",
+      "first_name": "Admin",
+      "last_name": "User",
+      "role": "admin",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "date_joined": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 2,
+    "fields": {
+      "username": "priest1",
+      "password": "pbkdf2_sha256$720000$3kHyqR4WB9fkTpnHjqNUuq$0Duj+mE4l8aTjJNz7Z9Kqw==",
+      "email": "priest1@punyaka.com",
+      "first_name": "Ramesh",
+      "last_name": "Sharma",
+      "role": "priest",
+      "phone": "+919876543210",
+      "is_active": true,
+      "date_joined": "2024-01-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.priestprofile",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "specializations": "Vedic Rituals, Homas, Graha Shanti",
+      "experience_years": 15,
+      "languages": "Hindi, Sanskrit, English",
+      "aadhaar_number": "123400000002",
+      "pan_number": "ABCDE0002F",
+      "bank_account_number": "9876540000000002",
+      "bank_ifsc_code": "SBIN0001234",
+      "is_verified": true,
+      "verification_date": "2024-02-01T00:00:00Z",
+      "average_rating": "4.80",
+      "total_ratings": 35,
+      "service_radius_km": 25,
+      "latitude": "19.0760",
+      "longitude": "72.8777"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 3,
+    "fields": {
+      "username": "priest2",
+      "password": "pbkdf2_sha256$720000$3kHyqR4WB9fkTpnHjqNUuq$0Duj+mE4l8aTjJNz7Z9Kqw==",
+      "email": "priest2@punyaka.com",
+      "first_name": "Venkatesh",
+      "last_name": "Iyer",
+      "role": "priest",
+      "phone": "+919876543211",
+      "is_active": true,
+      "date_joined": "2024-01-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.priestprofile",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "specializations": "Wedding Ceremonies, Satyanarayan Pooja, Vastu Shanti",
+      "experience_years": 10,
+      "languages": "Tamil, Telugu, English",
+      "aadhaar_number": "123400000003",
+      "pan_number": "ABCDE0003F",
+      "bank_account_number": "9876540000000003",
+      "bank_ifsc_code": "SBIN0001234",
+      "is_verified": true,
+      "verification_date": "2024-02-01T00:00:00Z",
+      "average_rating": "4.60",
+      "total_ratings": 28,
+      "service_radius_km": 25,
+      "latitude": "19.0760",
+      "longitude": "72.8777"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 4,
+    "fields": {
+      "username": "priest3",
+      "password": "pbkdf2_sha256$720000$3kHyqR4WB9fkTpnHjqNUuq$0Duj+mE4l8aTjJNz7Z9Kqw==",
+      "email": "priest3@punyaka.com",
+      "first_name": "Anand",
+      "last_name": "Joshi",
+      "role": "priest",
+      "phone": "+919876543212",
+      "is_active": true,
+      "date_joined": "2024-01-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.priestprofile",
+    "pk": 3,
+    "fields": {
+      "user": 4,
+      "specializations": "Ayush Homa, Navagraha Pooja, Rudra Abhishek",
+      "experience_years": 12,
+      "languages": "Marathi, Hindi, English",
+      "aadhaar_number": "123400000004",
+      "pan_number": "ABCDE0004F",
+      "bank_account_number": "9876540000000004",
+      "bank_ifsc_code": "SBIN0001234",
+      "is_verified": true,
+      "verification_date": "2024-02-01T00:00:00Z",
+      "average_rating": "4.90",
+      "total_ratings": 42,
+      "service_radius_km": 25,
+      "latitude": "19.0760",
+      "longitude": "72.8777"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 5,
+    "fields": {
+      "username": "customer1",
+      "password": "pbkdf2_sha256$720000$3kHyqR4WB9fkTpnHjqNUuq$0Duj+mE4l8aTjJNz7Z9Kqw==",
+      "email": "customer1@punyaka.com",
+      "first_name": "Priya",
+      "last_name": "Mehta",
+      "role": "customer",
+      "phone": "+919876543220",
+      "date_of_birth": "1990-05-15",
+      "time_of_birth": "10:30:00",
+      "place_of_birth": "Mumbai, India",
+      "is_active": true,
+      "date_joined": "2024-03-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 6,
+    "fields": {
+      "username": "customer2",
+      "password": "pbkdf2_sha256$720000$3kHyqR4WB9fkTpnHjqNUuq$0Duj+mE4l8aTjJNz7Z9Kqw==",
+      "email": "customer2@punyaka.com",
+      "first_name": "Raj",
+      "last_name": "Kumar",
+      "role": "customer",
+      "phone": "+919876543221",
+      "date_of_birth": "1988-08-20",
+      "time_of_birth": "14:15:00",
+      "place_of_birth": "Delhi, India",
+      "is_active": true,
+      "date_joined": "2024-03-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 7,
+    "fields": {
+      "username": "customer3",
+      "password": "pbkdf2_sha256$720000$3kHyqR4WB9fkTpnHjqNUuq$0Duj+mE4l8aTjJNz7Z9Kqw==",
+      "email": "customer3@punyaka.com",
+      "first_name": "Sneha",
+      "last_name": "Patel",
+      "role": "customer",
+      "phone": "+919876543222",
+      "date_of_birth": "1992-12-10",
+      "time_of_birth": "08:45:00",
+      "place_of_birth": "Ahmedabad, India",
+      "is_active": true,
+      "date_joined": "2024-03-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 1,
+    "fields": {
+      "name": "Satyanarayan Pooja",
+      "service_type": "pooja",
+      "description": "Traditional Satyanarayan Pooja for family well-being and prosperity",
+      "duration_minutes": 180,
+      "base_price": "2500.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 2,
+    "fields": {
+      "name": "Graha Shanti Homa",
+      "service_type": "homa",
+      "description": "Planetary peace ritual to reduce malefic effects of planets",
+      "duration_minutes": 240,
+      "base_price": "5000.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 3,
+    "fields": {
+      "name": "Navagraha Pooja",
+      "service_type": "pooja",
+      "description": "Worship of nine celestial deities for harmony and balance",
+      "duration_minutes": 120,
+      "base_price": "1800.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 4,
+    "fields": {
+      "name": "Rudra Abhishek",
+      "service_type": "pooja",
+      "description": "Sacred bathing ritual of Lord Shiva for blessings and peace",
+      "duration_minutes": 150,
+      "base_price": "3000.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 5,
+    "fields": {
+      "name": "Ayush Homa",
+      "service_type": "homa",
+      "description": "Fire ritual for longevity and good health",
+      "duration_minutes": 180,
+      "base_price": "4000.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "bookings.service",
+    "pk": 6,
+    "fields": {
+      "name": "Vastu Shanti Pooja",
+      "service_type": "pooja",
+      "description": "Ritual for home harmony and positive energy",
+      "duration_minutes": 120,
+      "base_price": "2200.00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "ecommerce.category",
+    "pk": 1,
+    "fields": {
+      "name": "Pooja Samagri",
+      "slug": "pooja-samagri",
+      "description": "Essential items for Hindu rituals"
+    }
+  },
+  {
+    "model": "ecommerce.category",
+    "pk": 2,
+    "fields": {
+      "name": "Incense & Dhoop",
+      "slug": "incense-dhoop",
+      "description": "Fragrant offerings for worship"
+    }
+  },
+  {
+    "model": "ecommerce.category",
+    "pk": 3,
+    "fields": {
+      "name": "Idols & Murtis",
+      "slug": "idols-murtis",
+      "description": "Sacred deity statues"
+    }
+  },
+  {
+    "model": "ecommerce.category",
+    "pk": 4,
+    "fields": {
+      "name": "Prasad Items",
+      "slug": "prasad-items",
+      "description": "Blessed food offerings"
+    }
+  },
+  {
+    "model": "ecommerce.category",
+    "pk": 5,
+    "fields": {
+      "name": "Gift Items",
+      "slug": "gift-items",
+      "description": "Spiritual gifts for loved ones"
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 1,
+    "fields": {
+      "name": "Complete Pooja Kit",
+      "slug": "complete-pooja-kit",
+      "description": "Complete pooja essentials including kumkum, haldi, agarbatti, camphor, and more",
+      "product_type": "kit",
+      "category": 1,
+      "price": "599.00",
+      "discount_price": "499.00",
+      "stock": 50,
+      "is_in_stock": true,
+      "gift_wrap_available": false,
+      "gift_wrap_price": "0.00",
+      "is_active": true,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 2,
+    "fields": {
+      "name": "Navagraha Pooja Kit",
+      "slug": "navagraha-pooja-kit",
+      "description": "Special kit for Navagraha worship with specific items for each planet",
+      "product_type": "samagri",
+      "category": 1,
+      "price": "799.00",
+      "discount_price": null,
+      "stock": 30,
+      "is_in_stock": true,
+      "gift_wrap_available": false,
+      "gift_wrap_price": "0.00",
+      "is_active": true,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 3,
+    "fields": {
+      "name": "Premium Agarbatti Set",
+      "slug": "premium-agarbatti-set",
+      "description": "Assorted pack of fragrant incense sticks - Rose, Sandalwood, Jasmine",
+      "product_type": "samagri",
+      "category": 2,
+      "price": "299.00",
+      "discount_price": "249.00",
+      "stock": 100,
+      "is_in_stock": true,
+      "gift_wrap_available": false,
+      "gift_wrap_price": "0.00",
+      "is_active": true,
+      "is_featured": false
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 4,
+    "fields": {
+      "name": "Brass Diya Set (5 pcs)",
+      "slug": "brass-diya-set",
+      "description": "Handcrafted brass diyas for lighting during pooja",
+      "product_type": "samagri",
+      "category": 1,
+      "price": "450.00",
+      "discount_price": null,
+      "stock": 40,
+      "is_in_stock": true,
+      "gift_wrap_available": false,
+      "gift_wrap_price": "0.00",
+      "is_active": true,
+      "is_featured": false
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 5,
+    "fields": {
+      "name": "Ganesha Idol (Small)",
+      "slug": "ganesha-idol-small",
+      "description": "Beautiful brass Ganesha idol - 4 inches height",
+      "product_type": "gift",
+      "category": 3,
+      "price": "399.00",
+      "discount_price": "349.00",
+      "stock": 25,
+      "is_in_stock": true,
+      "gift_wrap_available": true,
+      "gift_wrap_price": "50.00",
+      "is_active": true,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 6,
+    "fields": {
+      "name": "Lakshmi Idol (Medium)",
+      "slug": "lakshmi-idol-medium",
+      "description": "Elegant brass Lakshmi idol - 6 inches height",
+      "product_type": "gift",
+      "category": 3,
+      "price": "899.00",
+      "discount_price": null,
+      "stock": 15,
+      "is_in_stock": true,
+      "gift_wrap_available": true,
+      "gift_wrap_price": "50.00",
+      "is_active": true,
+      "is_featured": false
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 7,
+    "fields": {
+      "name": "Kumkum & Haldi Pack",
+      "slug": "kumkum-haldi-pack",
+      "description": "Pure kumkum and haldi powder - 100g each",
+      "product_type": "samagri",
+      "category": 1,
+      "price": "149.00",
+      "discount_price": "129.00",
+      "stock": 80,
+      "is_in_stock": true,
+      "gift_wrap_available": false,
+      "gift_wrap_price": "0.00",
+      "is_active": true,
+      "is_featured": false
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 8,
+    "fields": {
+      "name": "Camphor Tablets (Pack of 25)",
+      "slug": "camphor-tablets",
+      "description": "Pure camphor tablets for aarti",
+      "product_type": "samagri",
+      "category": 1,
+      "price": "99.00",
+      "discount_price": null,
+      "stock": 150,
+      "is_in_stock": true,
+      "gift_wrap_available": false,
+      "gift_wrap_price": "0.00",
+      "is_active": true,
+      "is_featured": false
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 9,
+    "fields": {
+      "name": "Rudraksha Mala",
+      "slug": "rudraksha-mala",
+      "description": "108 beads Rudraksha mala for meditation and prayer",
+      "product_type": "gift",
+      "category": 5,
+      "price": "699.00",
+      "discount_price": "599.00",
+      "stock": 20,
+      "is_in_stock": true,
+      "gift_wrap_available": true,
+      "gift_wrap_price": "50.00",
+      "is_active": true,
+      "is_featured": true
+    }
+  },
+  {
+    "model": "ecommerce.product",
+    "pk": 10,
+    "fields": {
+      "name": "Silver Plated Pooja Thali",
+      "slug": "silver-pooja-thali",
+      "description": "Decorative silver plated thali set for pooja",
+      "product_type": "gift",
+      "category": 1,
+      "price": "1299.00",
+      "discount_price": "1099.00",
+      "stock": 12,
+      "is_in_stock": true,
+      "gift_wrap_available": true,
+      "gift_wrap_price": "50.00",
+      "is_active": true,
+      "is_featured": true
+    }
+  }
+]
