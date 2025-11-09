@@ -2,40 +2,45 @@ import axios from 'axios';
 
 // Determine API base URL based on environment
 const getApiBaseUrl = () => {
-  // If NEXT_PUBLIC_API_URL is set, use it
-  if (process.env.NEXT_PUBLIC_API_URL) {
-    return process.env.NEXT_PUBLIC_API_URL;
-  }
-  
-  // In browser, construct URL based on current location
-  if (typeof window !== 'undefined') {
-    const protocol = window.location.protocol;
-    const hostname = window.location.hostname;
-    
-    // If in Codespaces (preview.app.github.dev), use port 8000 forwarded URL
-    if (hostname.includes('github.dev')) {
-      // Replace 3000 with 8000 in the URL
-      const apiHost = window.location.host.replace('-3000.', '-8000.');
-      return `${protocol}//${apiHost}/api`;
-    }
-    
-    // For local development
+  // Server-side: use localhost
+  if (typeof window === 'undefined') {
     return 'http://localhost:8000/api';
   }
   
-  // Fallback
+  // Client-side: detect environment
+  const hostname = window.location.hostname;
+  const protocol = window.location.protocol;
+  
+  // If in Codespaces or GitHub preview
+  if (hostname.includes('github.dev') || hostname.includes('githubpreview.dev') || hostname.includes('app.github.dev')) {
+    // Extract the base codespace name and replace port
+    // From: legendary-goggles-5jg47gppq562jrq-3000.app.github.dev
+    // To:   legendary-goggles-5jg47gppq562jrq-8000.app.github.dev
+    const backendHost = hostname.replace('-3000.', '-8000.');
+    const apiUrl = `${protocol}//${backendHost}/api`;
+    console.log('🔗 Punyaka API URL (Codespaces):', apiUrl);
+    console.log('🌍 Frontend hostname:', hostname);
+    console.log('🎯 Backend hostname:', backendHost);
+    return apiUrl;
+  }
+  
+  // For local development
+  console.log('🔗 Punyaka API URL (Local):', 'http://localhost:8000/api');
   return 'http://localhost:8000/api';
 };
 
-const API_BASE_URL = getApiBaseUrl();
-
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: '/',  // Start with relative, will be updated on client-side
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
   },
 });
+
+// Update baseURL on client-side
+if (typeof window !== 'undefined') {
+  api.defaults.baseURL = getApiBaseUrl();
+}
 
 // Add CSRF token to requests
 api.interceptors.request.use((config: any) => {
@@ -51,6 +56,21 @@ api.interceptors.request.use((config: any) => {
   
   return config;
 });
+
+// Add response interceptor for better error logging
+api.interceptors.response.use(
+  (response: any) => response,
+  (error: any) => {
+    console.error('API Error:', {
+      url: error.config?.url,
+      method: error.config?.method,
+      status: error.response?.status,
+      data: error.response?.data,
+      message: error.message
+    });
+    return Promise.reject(error);
+  }
+);
 
 export const authAPI = {
   login: (credentials: { username: string; password: string }) =>
