@@ -2,6 +2,12 @@ import axios from 'axios';
 
 // Determine API base URL based on environment
 const getApiBaseUrl = () => {
+  // Check for explicit environment variable first (Render deployment)
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    console.log('🔗 Punyaka API URL (ENV):', process.env.NEXT_PUBLIC_API_URL);
+    return process.env.NEXT_PUBLIC_API_URL;
+  }
+  
   // Server-side: use localhost
   if (typeof window === 'undefined') {
     return 'http://localhost:8000/api';
